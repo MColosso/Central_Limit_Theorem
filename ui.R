@@ -15,9 +15,13 @@ shinyUI(fluidPage(
         mainPanel(
           includeMarkdown("inc_Definition.Rmd"),
           br(),
-          h5(em("Texts and samples were taken from ", a("Wikipedia", href="http://en.wikipedia.org/wiki/Central_limit_theorem"),
-             ", Brian Caffo's little inference book ", a("Statistical inference for data science", href="https://leanpub.com/LittleInferenceBook/read#leanpub-auto-the-central-limit-theorem"),
-             " and Charles M. Grinstead & J. Laurie Snell's ", a("Introduction to Probability", href="http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/book.html"))
+          h5(em(strong("References:"), "Wikipedia (", 
+                a("[1]", href="http://en.wikipedia.org/wiki/Central_limit_theorem"), ",",
+                a("[2]", href="http://en.wikipedia.org/wiki/Bernoulli_distribution"), ",",
+                a("[3]", href="http://en.wikipedia.org/wiki/Exponential_distribution"), "and",
+                a("[4]", href="http://en.wikipedia.org/wiki/Poisson_distribution"), "),",
+             "Brian Caffo's little inference book ", a("Statistical inference for data science", href="https://leanpub.com/LittleInferenceBook/read#leanpub-auto-the-central-limit-theorem"),
+             "and Charles M. Grinstead & J. Laurie Snell's ", a("Introduction to Probability", href="http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/book.html"))
           )
         ),
         fluid = FALSE
@@ -87,11 +91,15 @@ shinyUI(fluidPage(
         mainPanel(
           tabsetPanel(
             tabPanel("Mean distrib.",
-              plotOutput("plot")), 
-#            tabPanel("Sample distrib.",
-#                     plotOutput("dplot")), 
+                    plotOutput("plot"),
+                    textOutput("tInput"),
+                    textOutput("sInput")), 
+           tabPanel("Sample distrib.",
+                    plotOutput("dplot"),
+                    textOutput("tValues"),
+                    textOutput("sValues")), 
             tabPanel("Table",
-              tableOutput("table"))
+                    tableOutput("table"))
           )
         )
       )
