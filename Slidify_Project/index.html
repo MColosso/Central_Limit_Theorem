@@ -4,7 +4,7 @@
   <title>Central Limit Theorem</title>
   <meta charset="utf-8">
   <meta name="description" content="Central Limit Theorem">
-  <meta name="author" content="Mario Colosso">
+  <meta name="author" content="M. Colosso">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -36,27 +36,37 @@
   <hgroup class="auto-fadein">
     <h1>Central Limit Theorem</h1>
     <h2>Definition and Experiments</h2>
-    <p>Mario Colosso<br/></p>
+    <p>M. Colosso<br/></p>
   </hgroup>
   <article></article>  
 </slide>
     
 
     <!-- SLIDES -->
-    <slide class="" id="slide-1" style="background:;">
-  <hgroup>
-    <h2>Central Limit Theorem</h2>
-  </hgroup>
+    <slide class="" id="custbg" style="background:;">
   <article data-timings="">
-    <p><strong>Central Limit Theorem</strong> is an application which can be use to understand the application and meaning of the Central Limit theorem, which is one of the most important theorem is statistics.</p>
+    <style>
+  #custbg {
+     background-image: url(./assets/img/cltapp.png);
+     background-repeat: no-repeat;
+     background-size: 30%;
+     background-position: 98% 98%;
+   }
+</style>
 
-<p>This application intended for...</p>
+<h2>Central Limit Theorem</h2>
 
-<h2>Central Limit Theorem in practice</h2>
+<p><strong>Central Limit Theorem</strong> is an application which can be use to understand the application and meaning of the Central Limit theorem, which is one of the most important theorem is statistics.</p>
 
-<p>For a better understanding of the application, read about the definition of Central Limit Theorem, distributions and help included in the application before use it and then enjoy watching the curves converging to a normal distribution by varying the parameters that define.</p>
+<p>This app is intended for students of first level class in statistics and, in general, to any person wishing to deepen their knowledge in this subject.</p>
 
-<p>To access the application, follow the link below:
+<p><br></p>
+
+<h3><strong>Central Limit Theorem in practice</strong></h3>
+
+<p>For a better understanding, read about the definition of Central Limit Theorem, distributions and help included in the application before use it and then enjoy watching the curves converging to a normal distribution by varying the parameters that define.</p>
+
+<p>To access the application, click on this link:
 <a href="http://mcolosso.shinyapps.io/Central_Limit_Theorem/">Central Limit Theorem</a></p>
 
   </article>
@@ -74,13 +84,13 @@
 
 <h3>Question 1</h3>
 
-<p>How do you &quot;normalize&quot; (center and reduce spam) a distribution?</p>
+<p>How do you &quot;normalize&quot; a distribution (center and reduce dispersion)?</p>
 
 <ol>
 <li>\((x - \mu) / \sqrt \sigma\)</li>
 <li><em>\((x - \mu) / \sigma\)</em></li>
 <li>\((x - \mu) / \sigma ^2\)</li>
-<li>\((x - sqtr \mu) / \sigma\)</li>
+<li><em>\((x - \mu) / (\sigma / \sqrt {n})\)</em></li>
 </ol>
 
   <button class="quiz-submit btn btn-primary">Submit</button>
@@ -89,7 +99,24 @@
   <button class="quiz-clear btn btn-danger">Clear</button>
   
   <div class="quiz-explanation">
-  <p>To normalize a distribution, you have to center it substracting the mean (\(\mu\)) to the values and standarizing the dispersion, dividing by the standard deviation (\(\sigma\))</p>
+  <p>To normalize a distribution, you have to center it substracting the mean (\(\mu\)) to the values and scaling the dispersion, dividing by the standard deviation (\(\sigma\)) or by the standard error (\(\sigma / \sqrt {n}\))</p>
+
+<p><strong>Example</strong>: Coin flip (\(\mu=3.5\), \(\sigma=\sqrt{35/12} \approx 1.707\))</p>
+
+<pre><code class="r">  n        &lt;- 1000
+  tbl      &lt;- sample(1:6, size=n, replace=TRUE)
+  tbl.norm &lt;- (tbl - 3.5) / sqrt(35/12)
+  matrix(c(mean(tbl), sd(tbl),
+           mean(tbl.norm), sd(tbl.norm)),
+         nrow = 2, ncol = 2, byrow=TRUE,
+         dimnames=list(c(&quot;original&quot;, &quot;normalized&quot;),
+                       c(&quot;mean&quot;, &quot;std.dev&quot;)))
+</code></pre>
+
+<pre><code>##                  mean   std.dev
+## original    3.4950000 1.7073049
+## normalized -0.0029277 0.9996954
+</code></pre>
 
 </div>
 </div>
@@ -99,7 +126,7 @@
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h3>Question 2</h3>
+    <h2>Question 2</h2>
   </hgroup>
   <article data-timings="">
     
@@ -134,13 +161,13 @@
 
 <slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h3>Question 3</h3>
+    <h2>Question 3</h2>
   </hgroup>
   <article data-timings="">
     
 <div class="quiz quiz-single well ">
   <p>Increasing the number of observations, the computed values of the
-average in all groups will be distributed according to the normal distribution (&quot;Gauss Bell&quot;)?</p>
+average in all groups will be distributed according to the normal distribution (&quot;Gauss bell&quot;)?</p>
 
 <ol>
 <li><em>True</em></li>
@@ -175,7 +202,7 @@ normally distributed, regardless of the underlying distribution.</p>
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Central Limit Theorem'>
+        data-slide=1 title=''>
          1
       </a>
     </li>

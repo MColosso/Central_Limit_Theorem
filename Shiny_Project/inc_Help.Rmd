@@ -9,7 +9,7 @@ To use this application, follow these simple steps:
 * Select the distribution to use: Die rolling, two dice rolling, coin flip, exponential distribution or Poisson ditribution.
 * Depending on the distribution, some aditional parameters are displayed: Coin flip (Bernoulli distribution) requiere the probability of "head" flip ($p$); exponential and Poisson distribution require the parameter lambda ($\lambda$) to specify the time between events or the number of events in a given time interval, respectively.
 * Next, select the number of similations to execute and the quantity of events to considere in each simulation.
-* Finally, select if you want to show the cummulative curve of the normal distribution.
+* Finally, select if you want to show the density curve of the normal distribution.
 
 The results of these experiments are the histogram of the mean in each simulation, and the table of values generated in each run.
 
