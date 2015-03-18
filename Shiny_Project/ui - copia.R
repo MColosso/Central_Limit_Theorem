@@ -9,9 +9,10 @@ shinyUI(fluidPage(
     "Introduction",
     tabPanel("Definition",
       sidebarLayout(
-        sidebarPanel(width=0),
+        sidebarPanel(width=0,
+          tags$script(src = 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML', type = 'text/javascript')
+        ),
         mainPanel(
-          withMathJax(),
           includeMarkdown("inc_Definition.Rmd"),
           br(),
           h5(em(strong("References:"), "Wikipedia (", 
